@@ -1,0 +1,22 @@
+.kpiCard {
+    width: 260px !important;
+    height: 120px !important;
+
+    margin-right: 20px !important;
+    margin-bottom: 20px !important;
+
+    border-radius: 12px !important;
+    background: #ffffff !important;
+
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.kpiCard .sapMPanelContent {
+    padding: 20px !important;
+}
+
+.sapTntToolPageAside,
+.sapTntSideNavigation {
+    width: 200px !important;
+    min-width: 200px !important;
+}

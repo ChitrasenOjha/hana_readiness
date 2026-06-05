@@ -1,0 +1,106 @@
+{
+  "_version": "1.85.0",
+  "sap.app": {
+    "id": "hanareadiness",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.25.0",
+      "toolsId": "ffc0468e-3e24-4bc8-b241-6b1e2be8686d"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.148.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.tnt": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "hanareadiness.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "hanareadiness.view",
+        "async": true,
+        "viewPath": "hanareadiness.view"
+      },
+ "routes": [
+    {
+      "name": "Dashboard",
+      "pattern": "",
+      "target": "TargetDashboard"
+    },
+    {
+      "name": "ATCResults",
+      "pattern": "ATCResults",
+      "target": "TargetATCResults"
+    }
+  ],
+
+  "targets": {
+    "TargetDashboard": {
+      "viewName": "Dashboard"
+    },
+    "TargetATCResults": {
+      "viewName": "ATCResults"
+    }
+  }
+    },
+    "rootView": {
+      "viewName": "hanareadiness.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

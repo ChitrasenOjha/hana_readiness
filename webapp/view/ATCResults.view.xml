@@ -1,0 +1,100 @@
+<mvc:View
+    controllerName="hanareadiness.controller.ATCResults"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+<Panel
+    headerText="ATC Findings"
+    class="sapUiResponsiveMargin atcPanel">
+
+    <headerToolbar>
+        <OverflowToolbar>
+
+            <Title
+                text="ATC Findings"
+                level="H4"/>
+
+            <ToolbarSpacer/>
+
+            <SearchField
+                width="20rem"
+                placeholder="Search Findings"/>
+
+            <Button
+                icon="sap-icon://filter"
+                tooltip="Filter"/>
+
+            <Button
+                icon="sap-icon://excel-attachment"
+                tooltip="Export"/>
+
+        </OverflowToolbar>
+    </headerToolbar>
+
+    <Table
+        id="atcTable"
+        growing="true"
+        growingScrollToLoad="true"
+        sticky="ColumnHeaders"
+        items="{/ATCResults}">
+
+        <columns>
+
+            <Column width="18rem">
+                <Text text="Report Name"/>
+            </Column>
+
+            <Column width="8rem">
+                <Text text="Line Number"/>
+            </Column>
+
+            <Column width="6rem">
+                <Text text="Priority"/>
+            </Column>
+
+            <Column width="30rem">
+                <Text text="ATC/CI Error Text"/>
+            </Column>
+
+            <Column hAlign="Center">
+                <Text text="Action"/>
+            </Column>
+
+        </columns>
+
+        <items>
+
+            <ColumnListItem
+                type="Navigation">
+
+                <cells>
+
+                    <ObjectIdentifier
+                        title="{ReportName}"/>
+
+                    <ObjectNumber
+                        number="{LineNumber}"/>
+
+                    <ObjectStatus
+                        text="{Priority}"
+                        state="Error"/>
+
+                    <Text
+                        text="{ErrorText}"
+                        wrapping="false"/>
+
+                    <Button
+                        icon="sap-icon://action"
+                        type="Transparent"
+                        tooltip="Open"/>
+
+                </cells>
+
+            </ColumnListItem>
+
+        </items>
+
+    </Table>
+
+</Panel>
+
+</mvc:View>
