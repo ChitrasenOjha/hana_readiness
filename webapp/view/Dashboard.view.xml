@@ -118,6 +118,7 @@
                                 icon="sap-icon://play"
                                 type="Emphasized"
                                 class="sapUiSmallMarginBegin"
+                                press=".onRunScan"
                             />
                             
                             <Text
